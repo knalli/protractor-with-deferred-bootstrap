@@ -1,0 +1,21 @@
+{
+  "name": "protractor-with-deferred-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "postupdate": "bower update",
+    "webdriver": "webdriver-manager update && webdriver-manager start",
+    "server": "coffee web-server.coffee",
+    "e2e-test": "protractor spec/default.conf.js"
+  },
+  "author": "knalli <knallisworld@googlemail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "protractor": "~1.0.0-rc2",
+    "bower": "~1.3.6",
+    "express": "~4.4.5",
+    "coffee-script": "~1.7.1"
+  }
+}

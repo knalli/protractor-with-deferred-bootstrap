@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app" class="no-js" xmlns:ng="http://angularjs.org" xmlns:hlx="ignored" xmlns:ui="ignored" xmlns:bs="ignored">
+<head> 
+  <base href="/"> 
+  <meta charset="utf-8">
+  <style>
+body > .splashscreen {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+body > .wrapper {
+  display: none;
+}
+body > .wrapper.loaded {
+  display: block;
+}
+  </style>
+</head>
+<body ng-init="loaded=false">
+  <div class="splashscreen" ng-hide="loaded">
+    LOADING
+  </div>
+  <div class="wrapper" ng-class="{loaded: loaded}">
+    <div ng-controller="MyController">
+      Application is loaded: {{ loaded }}
+      <div class="login-form" ng-show="!session.valid">
+        <form ng-submit="doLogin(data.username, data.password)">
+          <ul>
+            <li>
+              <label for="username">
+                Username: <input id="username" required name="username" ng-model="data.username" ng-disabled="session.loading">
+              </label>
+            </li>
+            <li>
+              <label for="password">
+                Password: <input id="password" required name="password" ng-model="data.password" type="password" ng-disabled="session.loading">
+              </label>
+            </li>
+            <li>
+              <span>Using username='{{data.username}}', password='{{data.password}}'</span>
+            </li>
+            <li>
+              <button type="submit" ng-disabled="!(data.username + data.password)">Login</button>
+            </li>
+        </form>
+      </div>
+      <div class="content" ng-show="session.valid">
+        Hello <span ng-bind="session.username"></span>
+        <form ng-submit="doLogout()">
+          <button type="submit">Logout</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script data-main="main" src="libs/requirejs/require.js"></script>
+</body>
+</html>

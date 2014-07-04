@@ -1,0 +1,24 @@
+{
+  "name": "protractor-with-deferred-bootstrap",
+  "version": "1.0.0",
+  "authors": [
+    "knalli <knallisworld@googlemail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.14",
+    "angular-resource": "1.2.14",
+    "angular-route": "1.2.14",
+    "angular-ui-router": "0.2.10",
+    "jquery": "~1.10.2",
+    "requirejs": "~2.1.8",
+    "requirejs-text": "~2.0.7",
+    "requirejs-domready": "~2.0.1"
+  }
+}
