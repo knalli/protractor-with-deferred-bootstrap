@@ -13,9 +13,9 @@ describe('Dashboard', function() {
   it('should return to the login from a logged in session', function() {
     var loginPage = new LoginPage(), dashboardPage = new DashboardPage();
     return LoadPage.waitForDismiss().then(function(){
-      return loginPage.login(browser.params.username, browser.params.password).then(function(){
-        return dashboardPage.logout(browser.params.username);
-      });
+      return loginPage.login(browser.params.username, browser.params.password);
+    }).then(function(){
+      return dashboardPage.logout(browser.params.username);
     }).then(function(){
       console.log('done');
     });
