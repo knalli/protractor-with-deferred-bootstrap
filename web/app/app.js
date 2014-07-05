@@ -1,7 +1,7 @@
 // for angular modules
 
 define(['angular', 'angular-ui/router'], function(angular) {
-  angular.module('app', ['app', 'ui.router'])
+  angular.module('app', ['ng', 'ui.router'])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider){
     $locationProvider.html5Mode(true);
     $urlRouterProvider.when('/', '/dashboard').otherwise('/');
