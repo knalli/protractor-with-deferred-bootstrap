@@ -22,6 +22,7 @@ module.exports.config = {
   },
 
   suites: {
-      base:  ['base/**/*.Spec.js']
+      //base:  ['base/**/*.Spec.js']
+      base:  ['base/**/LoginPage.Spec.js']
   }
 };
